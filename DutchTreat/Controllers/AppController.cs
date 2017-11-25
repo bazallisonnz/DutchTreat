@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DutchTreat.Services;
-using DutchTreat.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DutchTreat.Controllers
+﻿namespace DutchTreat.Controllers
 {
+    using DutchTreat.Services;
+    using DutchTreat.ViewModels;
+    using Microsoft.AspNetCore.Mvc;
+
     public class AppController : Controller
     {
         private readonly IMailService _mailService;
