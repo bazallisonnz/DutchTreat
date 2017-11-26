@@ -1,0 +1,8 @@
+{
+  "Colors": {
+    "Favorite": "blue"
+  },
+  "ConnectionStrings": {
+    "DutchConnectionString": "server=PLAYTECH-4K;Database=DutchTreatDb;Integrated Security=true;MultipleActiveResultSets=true;" 
+  }
+}
