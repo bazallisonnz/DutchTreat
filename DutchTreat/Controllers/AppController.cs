@@ -1,4 +1,7 @@
-﻿namespace DutchTreat.Controllers
+﻿using System.Linq;
+using DutchTreat.Data;
+
+namespace DutchTreat.Controllers
 {
     using DutchTreat.Services;
     using DutchTreat.ViewModels;
@@ -7,9 +10,11 @@
     public class AppController : Controller
     {
         private readonly IMailService _mailService;
+        private readonly DutchContext _context;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, DutchContext context)
         {
+            _context = context;
             _mailService = mailService;
         }
 
@@ -37,12 +42,20 @@
 
             return View();
         }
-
-
+        
         public IActionResult About()
         {
             ViewBag.Title = "About Us";
             return View();
+        }
+
+        public IActionResult Shop()
+        {
+            ViewBag.Title = "Shop";
+
+            var results = _context.Products.OrderBy(p => p.Category).ToList();
+
+            return View(results);
         }
     }
 }
