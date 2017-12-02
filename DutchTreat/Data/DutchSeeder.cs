@@ -48,6 +48,8 @@ namespace DutchTreat.Data
                     }
                 };
 
+                _ctx.Orders.Add(order);
+
                 _ctx.SaveChanges();
             }
         }

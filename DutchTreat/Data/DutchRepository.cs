@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using DutchTreat.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace DutchTreat.Data
@@ -18,6 +19,16 @@ namespace DutchTreat.Data
         {
             _logger = logger;
             _ctx = ctx;
+        }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            return _ctx.Orders.Include(o => o.Items).ThenInclude(i => i.Product).ToList();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return _ctx.Orders.Include(o => o.Items).ThenInclude(i => i.Product).FirstOrDefault(o => o.Id == id);
         }
 
         public IEnumerable<Product> GetAllProducts()
