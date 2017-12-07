@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using DutchTreat.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DutchTreat.Controllers
 {
@@ -49,6 +50,7 @@ namespace DutchTreat.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Shop()
         {
             ViewBag.Title = "Shop";
