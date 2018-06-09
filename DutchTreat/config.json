@@ -11,5 +11,7 @@
       "Microsoft": "Warning"
     }
   },
-  "Tokens": "k!la%&jshf#zxcv)cvlk*jfo;ijfoiwejwejflk^jdf(fdlja" 
+  "Tokens": "k!la%&jshf#zxcv)cvlk*jfo;ijfoiwejwejflk^jdf(fdlja",
+  "Issuer": "localhost",
+  "Audience": "localhost" 
 }
